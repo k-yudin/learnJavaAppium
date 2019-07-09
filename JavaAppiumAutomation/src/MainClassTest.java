@@ -3,10 +3,11 @@ import org.junit.Test;
 
 public class MainClassTest {
 
+    MainClass mc = new MainClass();
+
     @Test
-    public void testGetLocalNumber()
+    public void testGetClassNumber()
     {
-        MainClass mc = new MainClass();
-        Assert.assertTrue("Method returns invalid number!", mc.getLocalNumber() == 14);
+        Assert.assertTrue("Method getClassNumber returns unexpected number!", mc.getClassNumber() > 45);
     }
 }
