@@ -6,8 +6,9 @@ public class MainClassTest {
     MainClass mc = new MainClass();
 
     @Test
-    public void testGetClassNumber()
+    public void testGetClassString()
     {
-        Assert.assertTrue("Method getClassNumber returns unexpected number!", mc.getClassNumber() > 45);
+        Assert.assertTrue("String doesn't have search substring", mc.getClassString().contains("hello") ||
+                mc.getClassString().contains("Hello"));
     }
 }
