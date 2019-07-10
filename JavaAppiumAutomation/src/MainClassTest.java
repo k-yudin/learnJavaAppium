@@ -9,6 +9,6 @@ public class MainClassTest {
     public void testGetClassString()
     {
         Assert.assertTrue("String doesn't have search substring", mc.getClassString().contains("hello") ||
-                mc.getClassString().contains("Hello"));
+                mc.getClassString().contains("Hello")) ;
     }
 }
