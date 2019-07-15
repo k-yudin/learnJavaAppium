@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7375e3c-e835-420d-b60e-88b6d5e2ad8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/java_client_4_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/selenium_server_standalone_3_4_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaAppiumAutomation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaAppiumAutomation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/MainClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/MainClassTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainClassTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/FirstTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/FirstTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,28 +46,32 @@
     <session id="-668375167">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="618" />
+          <entry key="java" value="1748" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="618" />
+          <entry key="JAVA" value="1748" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="class" value="9" />
           <entry key="java" value="1" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CLASS" value="9" />
           <entry key="JAVA" value="1" />
           <entry key="XML" value="1" />
         </counts>
@@ -85,12 +83,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+            <state relative-caret-position="294">
+              <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1038#1039#0" expanded="true" />
-                <element signature="e#1060#1061#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,7 +117,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="813" />
+    <option name="height" value="803" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -129,6 +125,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -144,16 +141,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562861418176" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563198658700" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -171,11 +167,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FirstTest">
+  <component name="RunManager" selected="JUnit.FirstTest.firstTest">
     <configuration name="FirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FirstTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FirstTest.firstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FirstTest" />
+      <option name="METHOD_NAME" value="firstTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -206,30 +212,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.myFirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="myFirstTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.MainTest.myFirstTest" />
       <item itemvalue="JUnit.MainTest" />
       <item itemvalue="JUnit.MainClassTest.testGetLocalNumber" />
       <item itemvalue="JUnit.MainClassTest" />
       <item itemvalue="JUnit.FirstTest" />
+      <item itemvalue="JUnit.FirstTest.firstTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FirstTest.firstTest" />
         <item itemvalue="JUnit.FirstTest" />
         <item itemvalue="JUnit.MainClassTest" />
         <item itemvalue="JUnit.MainClassTest.testGetLocalNumber" />
         <item itemvalue="JUnit.MainTest" />
-        <item itemvalue="JUnit.MainTest.myFirstTest" />
       </list>
     </recent_temporary>
   </component>
@@ -247,42 +243,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MainClassTest_testGetLocalNumber - 2019.07.09 at 17h 58m 49s.xml">
-      <configuration name="MainClassTest.testGetLocalNumber" configurationId="JUnit" />
+    <history-entry file="FirstTest_firstTest - 2019.07.15 at 14h 59m 21s.xml">
+      <configuration name="FirstTest.firstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainClassTest_testGetLocalNumber - 2019.07.09 at 18h 10m 33s.xml">
-      <configuration name="MainClassTest.testGetLocalNumber" configurationId="JUnit" />
+    <history-entry file="FirstTest_firstTest - 2019.07.15 at 15h 00m 08s.xml">
+      <configuration name="FirstTest.firstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainClassTest - 2019.07.09 at 18h 37m 03s.xml">
-      <configuration name="MainClassTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest - 2019.07.09 at 19h 03m 39s.xml">
-      <configuration name="MainClassTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest - 2019.07.09 at 19h 04m 54s.xml">
-      <configuration name="MainClassTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest - 2019.07.10 at 19h 27m 49s.xml">
-      <configuration name="MainClassTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest - 2019.07.11 at 18h 49m 24s.xml">
-      <configuration name="MainClassTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest - 2019.07.11 at 19h 05m 25s.xml">
+    <history-entry file="FirstTest - 2019.07.15 at 15h 18m 44s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest - 2019.07.11 at 19h 05m 52s.xml">
+    <history-entry file="FirstTest_firstTest - 2019.07.15 at 15h 19m 24s.xml">
+      <configuration name="FirstTest.firstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest - 2019.07.15 at 16h 00m 49s.xml">
       <configuration name="FirstTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest - 2019.07.11 at 19h 06m 40s.xml">
-      <configuration name="FirstTest" configurationId="JUnit" />
+    <history-entry file="FirstTest_firstTest - 2019.07.15 at 16h 41m 16s.xml">
+      <configuration name="FirstTest.firstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_firstTest - 2019.07.15 at 16h 42m 12s.xml">
+      <configuration name="FirstTest.firstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_firstTest - 2019.07.15 at 16h 49m 23s.xml">
+      <configuration name="FirstTest.firstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_firstTest - 2019.07.15 at 16h 50m 01s.xml">
+      <configuration name="FirstTest.firstTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_firstTest - 2019.07.15 at 16h 50m 35s.xml">
+      <configuration name="FirstTest.firstTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="816" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="822" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -291,15 +287,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32596686" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39779004" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33013698" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3958904" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -313,39 +309,76 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="element" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>element</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
+    <entry file="file://$PROJECT_DIR$/src/MainClass.java" />
+    <entry file="file://$PROJECT_DIR$/src/MainClassTest.java" />
+    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#98#99#0" expanded="true" />
-            <element signature="e#124#125#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="104">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainClassTest.java">
+    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="79" column="31" lean-forward="true" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/java-client-4.1.2.jar!/io/appium/java_client/DefaultGenericMobileDriver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/internal/runners/statements/RunAfters.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        <state relative-caret-position="294">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1038#1039#0" expanded="true" />
-            <element signature="e#1060#1061#0" expanded="true" />
           </folding>
         </state>
       </provider>
