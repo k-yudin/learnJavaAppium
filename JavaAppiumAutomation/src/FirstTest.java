@@ -169,6 +169,34 @@ public class FirstTest {
         );
     }
 
+    @Test
+    public void checkWordsInSearchResults()
+    {
+        waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+
+        waitForElementAndSendKeys(By.xpath(
+                "//*[contains(@text, 'Search…')]"),
+                "Java",
+                "Cannot find search input field",
+                5
+        );
+
+        waitForElementPresence(By.xpath( "//*[@resource-id='org.wikipedia:id/page_list_item_container']"),
+                "Cannot find search results at all",
+                5
+        );
+
+        List<WebElement> list = driver.findElements(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_title']"));
+
+        for (WebElement item : list)
+        {
+            Assert.assertTrue("Search word is missing", item.getAttribute("text").contains("Java"));
+        }
+    }
+
     private WebElement waitForElementPresence(By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
