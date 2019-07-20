@@ -506,8 +506,34 @@ public class FirstTest {
                 5);
 
         String title_locator = "org.wikipedia:id/view_page_title_text";
-        assertElementPresent(By.xpath(title_locator),
+        assertElementPresent(By.id(title_locator),
                 "There is no title for an article by request: " + title_locator);
+    }
+
+    @Test
+    public void testChangeScreenOrientationOnSearchResults()
+    {
+        waitForElementAndClick(By.id(
+                "org.wikipedia:id/search_container"),
+                "Cannot find 'Search Wikipedia' input",
+                5);
+
+        String search_request = "Java";
+        waitForElementAndSendKeys(By.xpath(
+                "//*[contains(@text, 'Search…')]"),
+                search_request,
+                "Cannot find search input field",
+                5);
+
+        waitForElementAndClick(By.xpath( "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot find 'Object-oriented programming language' search result",
+                15);
+
+        String title_before_rotation = waitForElementAndGetAttribute(By.id("org.wikipedia:id/view_page_title_text"),
+                "text",
+                "Cannot find title of article",
+                15);
+
     }
 
     private WebElement waitForElementPresence(By by, String error_message, long timeoutInSeconds)
@@ -630,5 +656,11 @@ public class FirstTest {
             String default_message = "An element '" + by.toString() + "' supposed to be present.";
             throw new AssertionError(default_message + " " + error_message);
         }
+    }
+
+    private String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeoutInSeconds)
+    {
+        WebElement element = waitForElementPresence(by, error_message, timeoutInSeconds);
+        return element.getAttribute(attribute);
     }
 }
