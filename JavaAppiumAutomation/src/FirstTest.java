@@ -486,6 +486,30 @@ public class FirstTest {
                 "We found result by request: " + search_line);
     }
 
+    @Test
+    public void testTitleElementPresent()
+    {
+        waitForElementAndClick(By.id(
+                "org.wikipedia:id/search_container"),
+                "Cannot find 'Search Wikipedia' input",
+                5);
+
+        String search_request = "Java";
+        waitForElementAndSendKeys(By.xpath(
+                "//*[contains(@text, 'Search…')]"),
+                search_request,
+                "Cannot find search input field",
+                5);
+
+        waitForElementAndClick(By.xpath( "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot find 'Object-oriented programming language' search result",
+                5);
+
+        String title_locator = "org.wikipedia:id/view_page_title_text";
+        assertElementPresent(By.xpath(title_locator),
+                "There is no title for an article by request: " + title_locator);
+    }
+
     private WebElement waitForElementPresence(By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -592,9 +616,19 @@ public class FirstTest {
         int ammount_of_elements = getAmmountOfElements(by);
         if (ammount_of_elements > 0)
         {
-            String default_message = "An element '" + by.toString() + "' supposed to be not present";
+            String default_message = "An element '" + by.toString() + "' supposed to be not present.";
             throw new AssertionError(default_message + " " + error_message);
         }
 
+    }
+
+    private void assertElementPresent(By by, String error_message)
+    {
+        int ammount_of_elements = getAmmountOfElements(by);
+        if (ammount_of_elements == 0)
+        {
+            String default_message = "An element '" + by.toString() + "' supposed to be present.";
+            throw new AssertionError(default_message + " " + error_message);
+        }
     }
 }
