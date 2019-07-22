@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c7375e3c-e835-420d-b60e-88b6d5e2ad8e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/CoreTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/CoreTestCase.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,12 +58,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10859" />
+          <entry key="java" value="11023" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10859" />
+          <entry key="JAVA" value="11023" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -89,20 +89,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="362" column="26" selection-start-line="362" selection-start-column="26" selection-end-line="362" selection-end-column="26" />
+            <state relative-caret-position="189">
+              <caret line="376" column="18" selection-start-line="376" selection-start-column="18" selection-end-line="376" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#testSearch#0;class#FirstTest#0" />
-                <element signature="method#testChangeScreenOrientationOnSearchResults#0;class#FirstTest#0" />
                 <element signature="method#testCancelSearch#0;class#FirstTest#0" />
+                <element signature="method#testCompareArticleTitle#0;class#FirstTest#0" />
                 <element signature="method#testCancelSearchWithAssertArticlesCount#0;class#FirstTest#0" />
                 <element signature="method#testCheckWordsInSearchResults#0;class#FirstTest#0" />
                 <element signature="method#testSwipeArticle#0;class#FirstTest#0" />
                 <element signature="method#testSaveFirstArticleToMyList#0;class#FirstTest#0" />
                 <element signature="method#testSaveTwoArticles#0;class#FirstTest#0" />
+                <element signature="method#testAmmountOfNotEmptySearch#0;class#FirstTest#0" />
+                <element signature="method#testAmmountOfEmptySearch#0;class#FirstTest#0" />
                 <element signature="method#testTitleElementPresent#0;class#FirstTest#0" />
-                <element signature="method#testSearchArticleInBackground#0;class#FirstTest#0" />
               </folding>
             </state>
           </provider>
@@ -165,10 +166,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="250">
+              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1396#1397#0" expanded="true" />
+                <element signature="e#1454#1455#0" expanded="true" />
+                <element signature="e#1506#1507#0" expanded="true" />
+                <element signature="e#1563#1564#0" expanded="true" />
+                <element signature="e#1614#1615#0" expanded="true" />
+                <element signature="e#1658#1659#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -227,13 +234,13 @@
         <option value="$PROJECT_DIR$/src/MainTest.java" />
         <option value="$PROJECT_DIR$/src/MainClass.java" />
         <option value="$PROJECT_DIR$/src/MainClassTest.java" />
-        <option value="$PROJECT_DIR$/src/lib/CoreTestCase.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/NavigationUI.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" />
         <option value="$PROJECT_DIR$/src/FirstTest.java" />
+        <option value="$PROJECT_DIR$/src/lib/CoreTestCase.java" />
       </list>
     </option>
   </component>
@@ -290,7 +297,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563802714008" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563804952573" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -308,7 +315,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FirstTest.testAmmountOfEmptySearch">
+  <component name="RunManager" selected="JUnit.FirstTest.testSearchArticleInBackground">
     <configuration name="FirstTest.testAmmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
@@ -329,21 +336,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstTest.testCancelSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FirstTest.testChangeScreenOrientationOnSearchResults" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testCancelSearch" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FirstTest.testCompareArticleTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testCompareArticleTitle" />
+      <option name="METHOD_NAME" value="testChangeScreenOrientationOnSearchResults" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -359,20 +356,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FirstTest.testSearchArticleInBackground" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FirstTest" />
+      <option name="METHOD_NAME" value="testSearchArticleInBackground" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.FirstTest.testCancelSearch" />
-      <item itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
       <item itemvalue="JUnit.FirstTest.testSaveFirstArticleToMyList" />
       <item itemvalue="JUnit.FirstTest.testAmmountOfNotEmptySearch" />
       <item itemvalue="JUnit.FirstTest.testAmmountOfEmptySearch" />
+      <item itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
+      <item itemvalue="JUnit.FirstTest.testSearchArticleInBackground" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FirstTest.testSearchArticleInBackground" />
+        <item itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
         <item itemvalue="JUnit.FirstTest.testAmmountOfEmptySearch" />
         <item itemvalue="JUnit.FirstTest.testAmmountOfNotEmptySearch" />
         <item itemvalue="JUnit.FirstTest.testSaveFirstArticleToMyList" />
-        <item itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
-        <item itemvalue="JUnit.FirstTest.testCancelSearch" />
       </list>
     </recent_temporary>
   </component>
@@ -390,12 +397,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTest - 2019.07.21 at 20h 15m 28s.xml">
-      <configuration name="FirstTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest - 2019.07.21 at 20h 41m 04s.xml">
-      <configuration name="FirstTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FirstTest_testSearch - 2019.07.21 at 21h 31m 47s.xml">
       <configuration name="FirstTest.testSearch" configurationId="JUnit" />
     </history-entry>
@@ -419,6 +420,12 @@
     </history-entry>
     <history-entry file="FirstTest_testAmmountOfEmptySearch - 2019.07.22 at 16h 38m 14s.xml">
       <configuration name="FirstTest.testAmmountOfEmptySearch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_testChangeScreenOrientationOnSearchResults - 2019.07.22 at 17h 13m 50s.xml">
+      <configuration name="FirstTest.testChangeScreenOrientationOnSearchResults" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_testSearchArticleInBackground - 2019.07.22 at 17h 14m 57s.xml">
+      <configuration name="FirstTest.testSearchArticleInBackground" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -584,16 +591,6 @@
     <entry file="file://$PROJECT_DIR$/JavaAppiumAutomation.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/NavigationUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -630,6 +627,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1454#1455#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1563#1564#0" expanded="true" />
+            <element signature="e#1614#1615#0" expanded="true" />
+            <element signature="e#1658#1659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -642,20 +655,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="362" column="26" selection-start-line="362" selection-start-column="26" selection-end-line="362" selection-end-column="26" />
+        <state relative-caret-position="189">
+          <caret line="376" column="18" selection-start-line="376" selection-start-column="18" selection-end-line="376" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#testSearch#0;class#FirstTest#0" />
-            <element signature="method#testChangeScreenOrientationOnSearchResults#0;class#FirstTest#0" />
             <element signature="method#testCancelSearch#0;class#FirstTest#0" />
+            <element signature="method#testCompareArticleTitle#0;class#FirstTest#0" />
             <element signature="method#testCancelSearchWithAssertArticlesCount#0;class#FirstTest#0" />
             <element signature="method#testCheckWordsInSearchResults#0;class#FirstTest#0" />
             <element signature="method#testSwipeArticle#0;class#FirstTest#0" />
             <element signature="method#testSaveFirstArticleToMyList#0;class#FirstTest#0" />
             <element signature="method#testSaveTwoArticles#0;class#FirstTest#0" />
+            <element signature="method#testAmmountOfNotEmptySearch#0;class#FirstTest#0" />
+            <element signature="method#testAmmountOfEmptySearch#0;class#FirstTest#0" />
             <element signature="method#testTitleElementPresent#0;class#FirstTest#0" />
-            <element signature="method#testSearchArticleInBackground#0;class#FirstTest#0" />
           </folding>
         </state>
       </provider>

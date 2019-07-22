@@ -29,55 +29,35 @@ public class FirstTest extends CoreTestCase {
 
     @Test
     public void testChangeScreenOrientationOnSearchResults() {
-        mainPageObject.waitForElementAndClick(By.id(
-                "org.wikipedia:id/search_container"),
-                "Cannot find 'Search Wikipedia' input",
-                5);
 
-        String search_request = "Java";
-        mainPageObject.waitForElementAndSendKeys(By.xpath(
-                "//*[contains(@text, 'Search…')]"),
-                search_request,
-                "Cannot find search input field",
-                5);
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine("Java");
+        searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
 
-        mainPageObject.waitForElementAndClick(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Cannot find 'Object-oriented programming language' search result",
-                15);
-
-        String title_before_rotation = mainPageObject.waitForElementAndGetAttribute(By.id("org.wikipedia:id/view_page_title_text"),
-                "text",
-                "Cannot find title of article",
-                15);
+        ArticlePageObject articlePageObject = new ArticlePageObject(driver);
+        String title_before_rotation = articlePageObject.getArticleTitle();
 
         try {
-            driver.rotate(ScreenOrientation.LANDSCAPE);
+            this.rotateScreenLandscape();
         } catch (Exception ex) {
             System.out.println("Device orientation was not changed for the test! \n" + ex.getMessage());
             return;
         }
 
-        String title_after_rotation = mainPageObject.waitForElementAndGetAttribute(By.id("org.wikipedia:id/view_page_title_text"),
-                "text",
-                "Cannot find title of article",
-                15);
-
+        String title_after_rotation = articlePageObject.getArticleTitle();
         Assert.assertEquals("Article title was changed after screen rotation",
                 title_before_rotation,
                 title_after_rotation);
 
         try {
-            driver.rotate(ScreenOrientation.PORTRAIT);
+            this.rotateScreenPortrait();
         } catch (Exception ex) {
             System.out.println("Device orientation was not changed for the test! \n" + ex.getMessage());
             return;
         }
 
-        String title_after_second_rotation = mainPageObject.waitForElementAndGetAttribute(By.id("org.wikipedia:id/view_page_title_text"),
-                "text",
-                "Cannot find title of article",
-                15);
-
+        String title_after_second_rotation = articlePageObject.getArticleTitle();
         Assert.assertEquals("Article title was changed after screen rotation",
                 title_before_rotation,
                 title_after_second_rotation);
@@ -396,30 +376,12 @@ public class FirstTest extends CoreTestCase {
     @Test
     public void testSearchArticleInBackground() {
 
-        mainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Cannot find 'Search Wikipedia' input",
-                5
-        );
-
-        String search_request = "Java";
-        mainPageObject.waitForElementAndSendKeys(By.xpath(
-                "//*[contains(@text, 'Search…')]"),
-                search_request,
-                "Cannot find search input field",
-                5
-        );
-
-        mainPageObject.waitForElementPresence(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Cannot find 'Object-oriented programming language' article",
-                5
-        );
-
-        driver.runAppInBackground(2);
-
-        mainPageObject.waitForElementPresence(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Cannot find 'Object-oriented programming language' article after returning from background",
-                5
-        );
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine("Java");
+        searchPageObject.waitForSearchResult("Object-oriented programming language");
+        this.backgroundApp(2);
+        searchPageObject.waitForSearchResult("Object-oriented programming language");
     }
 
 }
