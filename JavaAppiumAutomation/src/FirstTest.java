@@ -1,6 +1,5 @@
 import lib.CoreTestCase;
 import lib.ui.*;
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
@@ -46,7 +45,7 @@ public class FirstTest extends CoreTestCase {
         }
 
         String title_after_rotation = articlePageObject.getArticleTitle();
-        Assert.assertEquals("Article title was changed after screen rotation",
+        assertEquals("Article title was changed after screen rotation",
                 title_before_rotation,
                 title_after_rotation);
 
@@ -58,7 +57,7 @@ public class FirstTest extends CoreTestCase {
         }
 
         String title_after_second_rotation = articlePageObject.getArticleTitle();
-        Assert.assertEquals("Article title was changed after screen rotation",
+        assertEquals("Article title was changed after screen rotation",
                 title_before_rotation,
                 title_after_second_rotation);
     }
@@ -85,7 +84,7 @@ public class FirstTest extends CoreTestCase {
 
         String article_title = articlePageObject.getArticleTitle();
 
-        Assert.assertEquals("Unexpected title!",
+        assertEquals("Unexpected title!",
                 "Java (programming language)",
                 article_title);
     }
@@ -111,7 +110,7 @@ public class FirstTest extends CoreTestCase {
 
         List<WebElement> list = driver.findElements(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']"));
 
-        Assert.assertTrue("Just 1 article was found!", list.size() > 1);
+        assertTrue("Just 1 article was found!", list.size() > 1);
 
         mainPageObject.waitForElementAndClear(By.id(
                 "org.wikipedia:id/search_src_text"),
@@ -130,32 +129,6 @@ public class FirstTest extends CoreTestCase {
                 "Clear button is still present",
                 5
         );
-    }
-
-    @Test
-    public void testCheckWordsInSearchResults() {
-        mainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Cannot find 'Search Wikipedia' input",
-                5
-        );
-
-        mainPageObject.waitForElementAndSendKeys(By.xpath(
-                "//*[contains(@text, 'Search…')]"),
-                "Java",
-                "Cannot find search input field",
-                5
-        );
-
-        mainPageObject.waitForElementPresence(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']"),
-                "Cannot find search results at all",
-                5
-        );
-
-        List<WebElement> list = driver.findElements(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_title']"));
-
-        for (WebElement item : list) {
-            Assert.assertTrue("Search word is missing", item.getAttribute("text").contains("Java"));
-        }
     }
 
     @Test
@@ -321,7 +294,7 @@ public class FirstTest extends CoreTestCase {
 
         String article_title = article_title_element.getAttribute("text");
 
-        Assert.assertEquals("Titles don't match!",
+        assertEquals("Titles don't match!",
                 list_item_title,
                 article_title);
     }
@@ -336,7 +309,7 @@ public class FirstTest extends CoreTestCase {
 
         int amount_fo_search_results = searchPageObject.getAmountOfFoundArticles();
 
-        Assert.assertTrue("We found too few results", amount_fo_search_results > 0);
+        assertTrue("We found too few results", amount_fo_search_results > 0);
     }
 
     @Test
