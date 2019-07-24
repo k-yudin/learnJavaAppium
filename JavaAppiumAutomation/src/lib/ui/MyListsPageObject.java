@@ -7,7 +7,8 @@ public class MyListsPageObject extends MainPageObject
 {
     public static final String
         FOLDER_BY_NAME_TPL = "//*[@text='{FOLDER_NAME}']",
-        ARTICLE_BY_TITLE_TPL = "//*[@text='{TITLE}']";
+        ARTICLE_BY_TITLE_TPL = "//*[@text='{TITLE}']",
+        SAVED_ARTICLE = "org.wikipedia:id/page_list_item_title";
 
     public MyListsPageObject(AppiumDriver driver)
     {
@@ -51,5 +52,11 @@ public class MyListsPageObject extends MainPageObject
     {
         String article_xpath = getFolderXPathByNmae(article_title);
         this.waitForElementPresence(By.xpath(article_xpath), "Cannot find saved article by title" + article_title, 15);
+    }
+
+    public void openSavedArticleInFolder()
+    {
+        this.waitForElementPresence(By.id(SAVED_ARTICLE), "Cannot find saved article in the list", 15);
+        this.waitForElementAndClick(By.id(SAVED_ARTICLE), "Cannot click on saved article in the list", 5);
     }
 }

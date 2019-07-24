@@ -11,7 +11,8 @@ public class SearchPageObject extends MainPageObject
         SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='{SUBSTRING}']",
         SEARCH_CANCEL_SEARCH = "org.wikipedia:id/search_close_btn",
         SEARCH_RESULT_ELEMENT = "//*[@resource-id='org.wikipedia:id/search_results_list']/*[@resource-id='org.wikipedia:id/page_list_item_container']",
-        SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text='No results found']";
+        SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text='No results found']",
+        SEARCH_INPUT_FIELD = "org.wikipedia:id/search_src_text";
     
     public SearchPageObject(AppiumDriver driver)
     {
@@ -69,7 +70,7 @@ public class SearchPageObject extends MainPageObject
                 "Cannot find anything by request ",
                 15);
 
-        return this.getAmmountOfElements(By.xpath(SEARCH_RESULT_ELEMENT));
+        return this.getAmountOfElements(By.xpath(SEARCH_RESULT_ELEMENT));
     }
 
     public void waitForEmptyResultsLabel()
@@ -80,5 +81,10 @@ public class SearchPageObject extends MainPageObject
     public void assertNoResultSearch()
     {
         this.assertElementNotPresent(By.xpath(SEARCH_RESULT_ELEMENT), "No results were found");
+    }
+
+    public void clearSearchInputField()
+    {
+        this.waitForElementAndClear(By.id(SEARCH_INPUT_FIELD), "Cannot find search input field", 5);
     }
 }

@@ -113,7 +113,7 @@ public class MainPageObject
                 .perform();
     }
 
-    public int getAmmountOfElements(By by)
+    public int getAmountOfElements(By by)
     {
         List elements = driver.findElements(by);
         return elements.size();
@@ -121,7 +121,7 @@ public class MainPageObject
 
     public void assertElementNotPresent(By by, String error_message)
     {
-        int ammount_of_elements = getAmmountOfElements(by);
+        int ammount_of_elements = getAmountOfElements(by);
         if (ammount_of_elements > 0)
         {
             String default_message = "An element '" + by.toString() + "' supposed to be not present.";
@@ -132,7 +132,7 @@ public class MainPageObject
 
     public void assertElementPresent(By by, String error_message)
     {
-        int ammount_of_elements = getAmmountOfElements(by);
+        int ammount_of_elements = getAmountOfElements(by);
         if (ammount_of_elements == 0)
         {
             String default_message = "An element '" + by.toString() + "' supposed to be present.";
