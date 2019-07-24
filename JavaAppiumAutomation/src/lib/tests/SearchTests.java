@@ -80,4 +80,15 @@ public class SearchTests extends CoreTestCase
         articlePageObject.assertTitleElementPresent();
 
     }
+
+    @Test
+    public void testTitleAndDescriptionInSearchResults()
+    {
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine("Japan");
+        searchPageObject.waitForElementByTitleAndDescription("Japan", "Constitutional monarchy in East Asia");
+        searchPageObject.waitForElementByTitleAndDescription("Japanese language", "East Asian language");
+        searchPageObject.waitForElementByTitleAndDescription("Japan Self-Defense Forces", "Combined military forces of Japan");
+    }
 }
