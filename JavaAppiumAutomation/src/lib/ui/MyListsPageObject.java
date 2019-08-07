@@ -9,7 +9,8 @@ abstract public class MyListsPageObject extends MainPageObject
         FOLDER_BY_NAME_TPL,
         ARTICLE_BY_TITLE_TPL,
         SAVED_ARTICLE,
-        CLOSE_SYNC_BUTTON;
+        CLOSE_SYNC_BUTTON,
+        ARTICLE_SAVED_BUTTON;
 
     public MyListsPageObject(AppiumDriver driver)
     {
@@ -42,7 +43,7 @@ abstract public class MyListsPageObject extends MainPageObject
                 "Cannot find saved article");
         if(Platform.getInstance().isIOS())
         {
-            this.clickOnElementAtTheTopRightCorner(article_xpath, "Cannot find saved articke");
+            this.clickOnElementAtTheTopRightCorner(article_xpath, "Cannot find saved article");
         }
         this.waitForArticleToDisAppearByTitle(article_title);
     }
@@ -68,5 +69,10 @@ abstract public class MyListsPageObject extends MainPageObject
     public void closeSyncDialog()
     {
         this.waitForElementAndClick(CLOSE_SYNC_BUTTON, "Cannot close sync overlay", 5);
+    }
+
+    public void checkSavedItemIsPresent()
+    {
+        this.waitForElementPresence(ARTICLE_SAVED_BUTTON, "Article is marked as not saved in favourites", 5);
     }
 }

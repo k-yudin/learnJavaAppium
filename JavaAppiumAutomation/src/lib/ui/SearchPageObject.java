@@ -11,7 +11,8 @@ abstract public class SearchPageObject extends MainPageObject
         SEARCH_CANCEL_SEARCH,
         SEARCH_RESULT_ELEMENT,
         SEARCH_EMPTY_RESULT_ELEMENT,
-        SEARCH_RESULT_BY_TITLE_AND_DESCRIPTION_TPL;
+        SEARCH_RESULT_BY_TITLE_AND_DESCRIPTION_TPL,
+        SEARCH_CLEAR_BUTTON;
     
     public SearchPageObject(AppiumDriver driver)
     {
@@ -97,5 +98,10 @@ abstract public class SearchPageObject extends MainPageObject
     public void clearSearchInputField()
     {
         this.waitForElementAndClear(SEARCH_INPUT, "Cannot find search input field", 5);
+    }
+
+    public void tapToClearInputField()
+    {
+        this.waitForElementAndClick(SEARCH_CLEAR_BUTTON,"Cannot find and click clear button for the input field", 5);
     }
 }

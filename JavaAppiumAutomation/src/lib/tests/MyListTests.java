@@ -66,33 +66,69 @@ public class MyListTests extends CoreTestCase
         ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
         articlePageObject.waitForTitleElement();
 
-        String name_of_folder = "Languages";
+
         String article_title = articlePageObject.getArticleTitle();
 
-        articlePageObject.addArticleToMyList(name_of_folder);
+        if (Platform.getInstance().isAndroid()) {
+            articlePageObject.addArticleToMyList(name_of_folder);
+        } else {
+            articlePageObject.addArticlesToMySaved();
+        }
+
         articlePageObject.closeArticle();
 
         searchPageObject.initSearchInput();
+
+        if (Platform.getInstance().isIOS())
+        {
+            searchPageObject.tapToClearInputField();
+        }
+
         searchPageObject.typeSearchLine("JavaScript");
         searchPageObject.clickByArticleWithSubstring("Programming language");
 
         articlePageObject.waitForTitleElement();
-        articlePageObject.addArticleToExistingFolder(name_of_folder);
+
+
+        if (Platform.getInstance().isAndroid()) {
+            articlePageObject.addArticleToExistingFolder(name_of_folder);
+        } else {
+            articlePageObject.addArticlesToMySaved();
+        }
+
         articlePageObject.closeArticle();
 
         NavigationUI navigationUI = NavigationUIFactory.get(driver);
         navigationUI.clickMyLists();
 
         MyListsPageObject myListsPageObject = MyListsPageObjectFactory.get(driver);
-        myListsPageObject.openFolderByName(name_of_folder);
-        myListsPageObject.swipeByArticleToDelete(article_title);
-        String list_item_title = articlePageObject.getSavedArticleTitle();
-        myListsPageObject.openSavedArticleInFolder();
-        article_title = articlePageObject.getArticleTitle();
 
-        assertEquals("Titles don't match!",
-                list_item_title,
-                article_title);
+        if (Platform.getInstance().isAndroid())
+        {
+            myListsPageObject.openFolderByName(name_of_folder);
+        }
+        else
+        {
+            myListsPageObject.closeSyncDialog();
+        }
+
+        myListsPageObject.swipeByArticleToDelete(article_title);
+
+        if (Platform.getInstance().isIOS())
+        {
+            searchPageObject.clickByArticleWithSubstring("Programming language");
+            myListsPageObject.checkSavedItemIsPresent();
+        }
+        else {
+
+            String list_item_title = articlePageObject.getSavedArticleTitle();
+            myListsPageObject.openSavedArticleInFolder();
+            article_title = articlePageObject.getArticleTitle();
+
+            assertEquals("Titles don't match!",
+                    list_item_title,
+                    article_title);
+        }
 
     }
 }
