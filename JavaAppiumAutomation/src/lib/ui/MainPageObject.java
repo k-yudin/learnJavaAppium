@@ -211,4 +211,9 @@ public class MainPageObject
         TouchAction action = new TouchAction(driver);
         action.tap(point_to_click_x, point_to_click_y).perform();
     }
+
+    public String[] splitSearchResultTitle(String input)
+    {
+        return input.split(Pattern.quote("\n"), 2);
+    }
 }

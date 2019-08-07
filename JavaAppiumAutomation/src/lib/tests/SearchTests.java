@@ -89,8 +89,9 @@ public class SearchTests extends CoreTestCase
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Japan");
-        searchPageObject.waitForElementByTitleAndDescription("Japan", "Constitutional monarchy in East Asia");
-        searchPageObject.waitForElementByTitleAndDescription("Japanese language", "East Asian language");
-        searchPageObject.waitForElementByTitleAndDescription("Japan Self-Defense Forces", "Combined military forces of Japan");
+
+        searchPageObject.compareSearchResultTitleAndDescriptionByIndexInSearch("Japan", "Country in East Asia", 1);
+        searchPageObject.compareSearchResultTitleAndDescriptionByIndexInSearch("Japanese language", "East Asian language", 2);
+        searchPageObject.compareSearchResultTitleAndDescriptionByIndexInSearch("Japan Self-Defense Forces", "Combined military forces of Japan", 3);
     }
 }
