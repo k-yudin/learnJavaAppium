@@ -38,7 +38,7 @@ public class Platform
         if (this.isAndroid())
             return new AndroidDriver(URL, this.getAndroidDesiredCapabilities());
         else if (this.isIOS())
-            return  new IOSDriver(URL, this.getIOSDesiredCapabilities());
+            return  new IOSDriver(this.getIOSDesiredCapabilities());
         else
             throw new Exception("Cannot detect driver type. Platform value: " + this.getPlatformVar());
     }
