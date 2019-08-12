@@ -5,7 +5,11 @@ import lib.ui.ArticlePageObject;
 import lib.ui.SearchPageObject;
 import lib.ui.factories.ArticlePageObjectFactory;
 import lib.ui.factories.SearchPageObjectFactory;
+import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class SearchTests extends CoreTestCase
 {
@@ -93,5 +97,20 @@ public class SearchTests extends CoreTestCase
         searchPageObject.compareSearchResultTitleAndDescriptionByIndexInSearch("Japan", "Country in East Asia", 1);
         searchPageObject.compareSearchResultTitleAndDescriptionByIndexInSearch("Japanese language", "East Asian language", 2);
         searchPageObject.compareSearchResultTitleAndDescriptionByIndexInSearch("Japan Self-Defense Forces", "Combined military forces of Japan", 3);
+    }
+
+    @Test
+    public void testCheckWordsInSearchResults()
+    {
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine("Java");
+
+        List<WebElement> list = searchPageObject.getTitleList();
+
+        for (WebElement item : list)
+        {
+            Assert.assertTrue("Search word is missing", item.getAttribute("text").contains("Java") || item.getAttribute("text").toLowerCase().contains("java") || item.getAttribute("text").toUpperCase().contains("JAVA"));
+        }
     }
 }

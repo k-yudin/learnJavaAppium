@@ -178,7 +178,7 @@ public class MainPageObject
         return element.getAttribute(attribute);
     }
 
-    private By getLocatorByString(String locator_with_type)
+    protected By getLocatorByString(String locator_with_type)
     {
         String[] exploaded_locator = locator_with_type.split(Pattern.quote(":"), 2);
         String by_type = exploaded_locator[0];

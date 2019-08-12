@@ -3,6 +3,8 @@ package lib.ui;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 import static junit.framework.TestCase.assertEquals;
 
 abstract public class SearchPageObject extends MainPageObject
@@ -16,7 +18,8 @@ abstract public class SearchPageObject extends MainPageObject
         SEARCH_EMPTY_RESULT_ELEMENT,
         SEARCH_RESULT_BY_TITLE_AND_DESCRIPTION_TPL,
         SEARCH_CLEAR_BUTTON,
-        SEARCH_RESULT_TITLE_AND_DESCRIPTION_TPL;
+        SEARCH_RESULT_TITLE_AND_DESCRIPTION_TPL,
+        SEARCH_RESULT_TITLE;
     
     public SearchPageObject(AppiumDriver driver)
     {
@@ -128,5 +131,11 @@ abstract public class SearchPageObject extends MainPageObject
 
         assertEquals("Title doesn't match for the " + index_in_search + " item in the search", arr[0], title);
         assertEquals("Description doesn't match for the " + index_in_search + " item in the search", arr[1],  description);
+    }
+
+    public List<WebElement> getTitleList()
+    {
+        List<WebElement> list = driver.findElements(this.getLocatorByString(SEARCH_RESULT_TITLE));
+        return list;
     }
 }
